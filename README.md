@@ -6,9 +6,8 @@
  ----------------------------------------------------------------- 
 
 
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
+command use:
+sudo pip3 install django==1.11
+django-admin startproject world_of_fintess .
+python3 manage.py makemigrations
+python3 manage.py migrate
