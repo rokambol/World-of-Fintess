@@ -3,8 +3,13 @@ from django.db import models
 # Create your models here.
 class Exercise(models.Model):
     name = models.CharField(max_length=254, default='')
-    description = models.TextField
+    description = models.TextField(blank=True, default='')
     image = models.ImageField(upload_to='images', default='')
     
-    def __self__(self):
-        return self.name
+    def __str__(self):
+        return '%s %s' % (self.name, self.description) 
+        
+    
+        
+        
+    

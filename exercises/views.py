@@ -4,5 +4,5 @@ from .models import Exercise
 
 # Create your views here.
 def all_exercises(request):
-    exercises= Exercise.object.all
-    return render(request, 'exercises.html', {"exercises": exercises})
+    exercises= Exercise.objects.all()
+    return render(request, "exercises.html", {"exercises": exercises})

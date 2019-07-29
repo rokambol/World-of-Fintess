@@ -6,7 +6,8 @@ class ExerciseTests(TestCase):
     """ Run test agains Exercise model"""
     
     def test_str(self):
-        test_name = Exercise(name='ex')
-        self.assertNotEqual(str(test_name), 'args')
+        test_name = Exercise(name='ex', description='exercise description')
+        self.assertEqual(str(test_name), 'ex exercise description')
         
+      
         
