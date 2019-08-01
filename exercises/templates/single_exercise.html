@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4" data-exercise="{{ exercise|safe }}">
+    <h1>{{ exircise.name }}</h1>
+    <div class="warning">
+        <img src="{{ MEDIA_URL }}{{ exercise.image }}" alt="Girl in a jacket">
+        <p>{{ exercise.description }}</p>
+    </div>
+</div>
+
+{% endblock %}

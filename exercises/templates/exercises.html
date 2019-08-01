@@ -5,17 +5,17 @@
     {% for exercise in exercises %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
-               <div class="exercise" style="background-image: url('{{ MEDIA_URL }}{{ exercise.image }}')"></div>
+               <div class="exercise" style="background-image: url('{{ MEDIA_URL }}{{ exercise.image }}');background-size: cover; background-position: center; background-repeat:no-repeat; height: 250px; width:220px;"></div>
 
                 <h3>{{ exercise.name }}</h3>
                 <p class="exercise-description">{{ exercise.description }}</p>
 
-                <form method="post" action="{% url 'add_to_cart' exercise.id %}">
+                <form method="post" action="{% url 'single_exercise' exercise.id %}">
                     {% csrf_token %}
                     <div class="input-group">
                         <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                         <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+                            <button class="btn btn-success" type="submit">add</button>
                         </span>
                     </div>
                 </form>
