@@ -4,5 +4,5 @@ from exercises.models import Exercise
 
 # Create your views here.
 def do_search(request):
-    exercises = Exercise.objects.filter(name__icontains=request.Get['q'])
+    exercises = Exercise.objects.filter(name__icontains=request.GET['q'])
     return render(request, "exercises.html", {"exercises":exercises})

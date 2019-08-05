@@ -34,6 +34,14 @@
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
+                    <li>
+                        <a href="{% url 'view_cart' %}">
+                            <i class="fas fa-dumbbell"></i>Cart
+                            
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
