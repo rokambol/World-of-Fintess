@@ -1,5 +1,6 @@
 from django import forms
-from .models import your_details
+from .models import your_details, fitness_level
+
 
 
 class MakePaymentForm(forms.Form):
@@ -12,3 +13,10 @@ class MakePaymentForm(forms.Form):
     expiry_month = forms.ChoiceField(label='Month', choices=MONTH_CHOICES, required=False)
     expiry_year = forms.ChoiceField(label='Year', choices=YEAR_CHOICES, required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
+    
+class YourDetailsForm(forms.Form):
+    
+    height = forms.IntegerField(label='your height in centimetres', required=True)
+    weight = forms.IntegerField(label='your weight in kilos', required=True)
+    age = forms.IntegerField(label='your age...', required=True)
+    color = forms.ChoiceField(choices=fitness_level)
