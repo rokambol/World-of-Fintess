@@ -12,7 +12,7 @@ fitness_level = (
     )
 
 # Create your models here.
-class your_details(models.Model):
+class payment(models.Model):
    height = models.DecimalField(decimal_places=2,max_digits=3, blank=False)
    weight = models.PositiveIntegerField(default=0, blank=False)
    age = models.PositiveIntegerField(default=0, blank=False)

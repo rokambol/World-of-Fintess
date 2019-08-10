@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from .views import buy_program, your_details
+from .views import buy_program, payment
 
 urlpatterns = [ 
     url(r'^$', buy_program, name='buy_program'),
-    url(r'^your_details', your_details, name='your_details'),
+    url(r'^payment', payment, name='payment'),
+
 ]

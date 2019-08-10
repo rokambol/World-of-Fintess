@@ -1,6 +1,11 @@
 body {
     font-family: Arial;
     padding-top: 100px;
+    background-image:url("https://media1.tenor.com/images/401d6249fe8285404d40387b11633269/tenor.gif?itemid=10868524");
+    background-color: black;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 footer {
@@ -12,7 +17,8 @@ footer {
 }
 
 .icon-bar {
-    background-color: #fff;
+    color: transparent;
+    background-color: transparent;
 }
 
 .accountform {
@@ -59,8 +65,11 @@ caption p {
 .panel-body {
     height: 100%;
     border: 1px solid #ddd;
+   
 }
-
+ .panel{
+    background-color: #00000000;
+ }
 .exercise-description {
     min-height: 40px;
 }

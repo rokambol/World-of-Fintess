@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+
+
+{% block content %}
+{% for item in table1 %}
+
+<p> key focus: {{ item.key_focus }}</p>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">week</th>
+      <th scope="col">day 1</th>
+      <th scope="col">day 2</th>
+      <th scope="col">day 3</th>
+      <th scope="col">day 4</th>
+      <th scope="col">day 5</th>
+      <th scope="col">day 6</th>
+      <th scope="col">day 7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ item.day1 }}</td>
+      <td>{{ item.day2 }}</td>
+      <td>{{ item.day3 }}</td>
+      <td>{{ item.day4 }}</td>
+      <td>{{ item.day5 }}</td>
+      <td>{{ item.day6 }}</td>
+      <td>{{ item.day7 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">2</th>
+      <td>{{ item.day8 }}</td>
+      <td>{{ item.day9 }}</td>
+      <td>{{ item.day10 }}</td>
+      <td>{{ item.day11 }}</td>
+      <td>{{ item.day12 }}</td>
+      <td>{{ item.day13 }}</td>
+      <td>{{ item.day14 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">3</th>
+      <td>{{ item.day15 }}</td>
+      <td>{{ item.day16 }}</td>
+      <td>{{ item.day17 }}</td>
+      <td>{{ item.day18 }}</td>
+      <td>{{ item.day19 }}</td>
+      <td>{{ item.day20 }}</td>
+      <td>{{ item.day21 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">4</th>
+      <td>{{ item.day22 }}</td>
+      <td>{{ item.day23 }}</td>
+      <td>{{ item.day24 }}</td>
+      <td>{{ item.day25 }}</td>
+      <td>{{ item.day26 }}</td>
+      <td>{{ item.day27 }}</td>
+      <td>{{ item.day28 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">5</th>
+      <td>{{ item.day29 }}</td>
+      <td>{{ item.day30 }}</td>
+      <td>{{ item.day31 }}</td>
+      <td>{{ item.day32 }}</td>
+      <td>{{ item.day33 }}</td>
+      <td>{{ item.day34 }}</td>
+      <td>{{ item.day35 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">6</th>
+      <td>{{ item.day36 }}</td>
+      <td>{{ item.day37 }}</td>
+      <td>{{ item.day38 }}</td>
+      <td>{{ item.day39 }}</td>
+      <td>{{ item.day40 }}</td>
+      <td>{{ item.day41 }}</td>
+      <td>{{ item.day42 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">7</th>
+      <td>{{ item.day43 }}</td>
+      <td>{{ item.day44 }}</td>
+      <td>{{ item.day45 }}</td>
+      <td>{{ item.day46 }}</td>
+      <td>{{ item.day47 }}</td>
+      <td>{{ item.day48 }}</td>
+      <td>{{ item.day49 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">8</th>
+      <td>{{ item.day50 }}</td>
+      <td>{{ item.day51 }}</td>
+      <td>{{ item.day52 }}</td>
+      <td>{{ item.day53 }}</td>
+      <td>{{ item.day54 }}</td>
+      <td>{{ item.day55 }}</td>
+      <td>{{ item.day56 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">9</th>
+      <td>{{ item.day57 }}</td>
+      <td>{{ item.day58 }}</td>
+      <td>{{ item.day59 }}</td>
+      <td>{{ item.day60 }}</td>
+      <td>{{ item.day61 }}</td>
+      <td>{{ item.day62 }}</td>
+      <td>{{ item.day63 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">10</th>
+      <td>{{ item.day64 }}</td>
+      <td>{{ item.day65 }}</td>
+      <td>{{ item.day66 }}</td>
+      <td>{{ item.day67 }}</td>
+      <td>{{ item.day68 }}</td>
+      <td>{{ item.day69 }}</td>
+      <td>{{ item.day70 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">11</th>
+      <td>{{ item.day71 }}</td>
+      <td>{{ item.day72 }}</td>
+      <td>{{ item.day73 }}</td>
+      <td>{{ item.day74 }}</td>
+      <td>{{ item.day75 }}</td>
+      <td>{{ item.day76 }}</td>
+      <td>{{ item.day77 }}</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">12</th>
+      <td>{{ item.day78 }}</td>
+      <td>{{ item.day79 }}</td>
+      <td>{{ item.day80 }}</td>
+      <td>{{ item.day81 }}</td>
+      <td>{{ item.day82 }}</td>
+      <td>{{ item.day83 }}</td>
+      <td>{{ item.day84 }}</td>
+    </tr>
+    
+  </tbody>
+</table>
+ {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

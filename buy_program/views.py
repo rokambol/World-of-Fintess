@@ -11,24 +11,28 @@ stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required()
-def your_details(request):
+def buy_program(request):
     if request.method == "POST":
        your_detailsform = YourDetailsForm(request.POST)
        if your_detailsform.is_valid():
            height= request.POST.get("height")
            weight = request.POST.get("weight")
-           age = request.Post.get("age")
+           age = request.POST.get("age")
+           level = request.POST.get("level")
+           
+           return (redirect('payment.html'))
     else:
         your_detailsform=YourDetailsForm()
-    return render(request, "your_details.html", {"your_detailsform" : your_detailsform})
+    return render(request, "buy_program.html", {"your_detailsform" : your_detailsform})
 
 
-
-def buy_program(request):
+total = 2
+def payment(request):
     if request.method == "POST":
         payment_form = MakePaymentForm(request.POST)
         try:
             customer = stripe.Charge.create(
+                amount = int(total * 100),
                 currency="GBP",
                 description=request.user.email,
                 card=payment_form.cleaned_data['stripe_id']
@@ -37,8 +41,8 @@ def buy_program(request):
             messages.error(request, "Your card was declined!")
             
             if customer.paid:
-                messages.error(request, "You have successfully paid")
-                return redirect(reverse('exercises'))
+                messages.success(request, "You have successfully paid")
+                return redirect('fitness_program')
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -47,4 +51,4 @@ def buy_program(request):
     else:
         payment_form = MakePaymentForm()
     
-    return render(request, "buy_program.html", { "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+    return render(request, "payment.html", { "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})

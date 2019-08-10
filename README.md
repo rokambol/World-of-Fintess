@@ -11,3 +11,23 @@ sudo pip3 install django==1.11
 django-admin startproject world_of_fintess .
 python3 manage.py makemigrations
 python3 manage.py migrate
+
+$(function() {
+var body = $(‘body’);
+var backgrounds = new Array(
+‘url(image1.jpg)’,
+‘url(image2.jpg)’
+);
+var current = 0;
+
+function nextBackground() {
+body.css(
+‘background’,
+backgrounds[current = ++current % backgrounds.length]
+);
+
+setTimeout(nextBackground, 10000);
+}
+setTimeout(nextBackground, 10000);
+body.css(‘background’, backgrounds[0]);
+});

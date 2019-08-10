@@ -1,5 +1,5 @@
 from django import forms
-from .models import your_details, fitness_level
+from .models import payment, fitness_level
 
 
 
@@ -19,4 +19,4 @@ class YourDetailsForm(forms.Form):
     height = forms.IntegerField(label='your height in centimetres', required=True)
     weight = forms.IntegerField(label='your weight in kilos', required=True)
     age = forms.IntegerField(label='your age...', required=True)
-    color = forms.ChoiceField(choices=fitness_level)
+    level = forms.ChoiceField(choices=fitness_level)
