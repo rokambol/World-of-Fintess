@@ -19,9 +19,5 @@ class payment(models.Model):
    levels = models.CharField(max_length=30, choices=fitness_level, default=begginer)
       
       
- 
-   
-   def __str__(self):
-      return self.age
       
    

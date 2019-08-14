@@ -1,10 +1,4 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
-
+[![Build Status](https://travis-ci.com/rokambol/World-of-Fintess.svg?branch=master)](https://travis-ci.com/rokambol/World-of-Fintess)
 
 command use:
 sudo pip3 install django==1.11
