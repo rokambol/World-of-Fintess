@@ -31,3 +31,6 @@ setTimeout(nextBackground, 10000);
 setTimeout(nextBackground, 10000);
 body.css(‘background’, backgrounds[0]);
 });
+
+https://media1.tenor.com/images/52ee24b6e1634cb072cc4dbdf51013ab/tenor.gif?itemid=4469244
+https://media.tenor.com/images/3ba6571ba6610f4fa59b2cd68e8eb81c/tenor.gif

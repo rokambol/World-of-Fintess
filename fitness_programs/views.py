@@ -4,10 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
 
+
 # Create your views here.
 @login_required()
 def fitness_program(request):
-    table1 = fitness_programs.objects.all()
+    height = int(request.session["height"])
+    weight = int(request.session["weight"])
+    age = int(request.session["age"])
+    level = str(request.session["level"])
+    if weight >= 99 and height < 180:
+        table1 = fitness_programs.objects.all().filter(name="Begginer 2")
+    else:
+        table1 = fitness_programs.objects.all().filter(name="Begginer 1")
     return render(request, "fitness_program.html", {"table1" : table1})
-
-

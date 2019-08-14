@@ -57,9 +57,9 @@
     {% endif %}
     <div class="container">
         <div class="display">
-            <form action="{% url 'search' %}" method="GET">
+            <form class="search" action="{% url 'search' %}" method="GET">
                 <input type="text" name="q">
-                <button type="search">Search</button>
+                <button class="btn btn-primary pr-20" type="search">Search</button>
             </form>
         </div>
         {% block content %} {% endblock %}

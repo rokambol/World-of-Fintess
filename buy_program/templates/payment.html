@@ -6,13 +6,18 @@
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="">
     //<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}';
+        Stripe.publishableKey = '{{ publishable }};'
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
 {% block content %}
+
+{% for item in table1 %}
+<p>your fitness programme price is:{{ item.price }} GBP ,please pay it in the form below </p>
+{% endfor %}
+
 <form role="form" method="post" id="payment-form" action="{% url 'payment' %}">
     <legend>Payment Details</legend>
 
@@ -23,6 +28,7 @@
 
     <div class="form-group col-md-6">
         {{ payment_form | as_bootstrap }}
+        
     </div>
 
     {% csrf_token %}
@@ -32,3 +38,5 @@
 </form>
 
 {% endblock %}
+
+
