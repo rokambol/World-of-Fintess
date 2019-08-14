@@ -11,8 +11,8 @@ import stripe
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
 
-customer = stripe.Customer.create()
-print(customer.last_response.request_id)
+#customer = stripe.Customer.create()
+#print(customer.last_response.request_id)
 
 @login_required()
 def buy_program(request):
@@ -54,18 +54,17 @@ def payment(request):
                 customer = stripe.Charge.create(
                     amount = int(price * 100),
                     currency="GBP",
-                    payment_method_types=['card'],
                     description=request.user.email,
                     card=payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
                 
-                if customer.paid:
-                    messages.success(request, "You have successfully paid")
-                    return redirect('fitness_program')
-                else:
-                    messages.error(request, "Unable to take payment")
+            if customer.paid:
+                messages.success(request, "You have successfully paid")
+                return redirect('fitness_program')
+            else:
+                messages.error(request, "Unable to take payment")
         else:
             print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
