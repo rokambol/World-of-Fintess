@@ -5,7 +5,7 @@ sudo pip3 install django==1.11
 django-admin startproject world_of_fintess .
 python3 manage.py makemigrations
 python3 manage.py migrate
-find . -name \*.pyc -delete delete .pyc file
+find . -name \*.pyc -delete               #delete .pyc file
 
 $(function() {
 var body = $(‘body’);
