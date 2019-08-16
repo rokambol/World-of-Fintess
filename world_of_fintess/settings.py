@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'exercises',
-    'cart',
     'fitness_programs',
     'buy_program', 
     
@@ -71,7 +70,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents'
             ],
         },
     },

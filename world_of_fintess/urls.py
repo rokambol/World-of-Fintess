@@ -17,7 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from exercises import urls as urls_exercises
-from cart import urls as urls_cart
 from buy_program import urls as urls_buy_program
 from fitness_programs import urls as urls_fitness_program
 from search import urls as urls_search
@@ -35,6 +34,5 @@ urlpatterns = [
     url(r'^single_exercise/', include(urls_exercises)),
     url(r'^buy_program/', include(urls_buy_program)),
     url(r'^fitness_programs/', include(urls_fitness_program)),
-    url(r'^cart/', include(urls_cart)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]

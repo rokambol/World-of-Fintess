@@ -1,5 +1,5 @@
 from django import forms
-from .models import payment, fitness_level
+from .models import fitness_level
 
 
 
@@ -21,3 +21,11 @@ class YourDetailsForm(forms.Form):
     weight = forms.IntegerField(label='your weight in kilos', required=True)
     age = forms.IntegerField(label='your age...', required=True)
     level = forms.ChoiceField(choices=fitness_level)
+    
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        empty_error = "You can't have an empty list item"
+        self.fields['height'].error_messages['required'] = empty_error
+    
+    
