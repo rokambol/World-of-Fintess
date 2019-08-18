@@ -11,14 +11,14 @@ fitness_level = (
         
     )
 
-# Create your models here.
-#class payment(models.Model):
-    #height = models.DecimalField(decimal_places=2,max_digits=3, blank=False)
-   # weight = models.PositiveIntegerField(default=0, blank=False)
-   # age = models.PositiveIntegerField(default=0, blank=False)
-   # levels = models.CharField(max_length=30, choices=fitness_level, default=begginer)
+#Create your models here.
+class Details(models.Model):
+    height = models.CharField(max_length=3, default='')
+    weight = models.CharField(max_length=3, default='')
+    age = models.CharField(max_length=3, default='')
+    levels = models.CharField(max_length=30, choices=fitness_level, default='')
       
       
       
-    #def __str__(self):
-        #return '%s %s %s %s' % (self.height, self.weight, self.age, self.level) 
+    def __str__(self):
+        return '%s %s %s %s' % (self.height, self.weight, self.age, self.level) 

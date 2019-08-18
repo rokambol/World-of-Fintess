@@ -10,3 +10,5 @@ class Fitness_ProgramsTests(TestCase):
     def test_str(self):
         test_name = fitness_programs(name='alfa', price='27')
         self.assertEquals(str(test_name), 'alfa 27')
+        
+    

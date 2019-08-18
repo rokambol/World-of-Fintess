@@ -15,6 +15,7 @@ class MakePaymentForm(forms.Form):
     stripe_id = forms.CharField(widget=forms.HiddenInput())
     
     
+    
 class YourDetailsForm(forms.Form):
     
     height = forms.IntegerField(label='your height in centimetres', required=True)
@@ -23,9 +24,9 @@ class YourDetailsForm(forms.Form):
     level = forms.ChoiceField(choices=fitness_level)
     
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        empty_error = "You can't have an empty list item"
-        self.fields['height'].error_messages['required'] = empty_error
+    #def __init__(self, *args, **kwargs):
+        #super().__init__(*args, **kwargs)
+       # empty_error = "You can't have an empty field"
+       # self.fields['height'].error_messages['required'] = empty_error
     
     
