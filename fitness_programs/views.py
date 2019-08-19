@@ -17,3 +17,6 @@ def fitness_program(request):
     else:
         table1 = fitness_programs.objects.all().filter(name="Begginer 1")
     return render(request, "fitness_program.html", {"table1" : table1})
+    
+def __str__(self):
+    return '%s %s %s %s' % (self.height, self.weight, self.age, self.level)

@@ -1,0 +1,8 @@
+ersion: 2.0
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.2-jessie-node
+    steps:
+      - checkout
+      - run: python3 manage.py test
