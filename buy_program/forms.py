@@ -1,5 +1,5 @@
 from django import forms
-from .models import fitness_level
+from .models import Details, fitness_level
 
 
 
@@ -23,10 +23,6 @@ class YourDetailsForm(forms.Form):
     age = forms.IntegerField(label='your age...', required=True)
     level = forms.ChoiceField(choices=fitness_level)
     
-    
-    #def __init__(self, *args, **kwargs):
-        #super().__init__(*args, **kwargs)
-       # empty_error = "You can't have an empty field"
-       # self.fields['height'].error_messages['required'] = empty_error
+
     
     

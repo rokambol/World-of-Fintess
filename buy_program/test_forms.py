@@ -18,10 +18,5 @@ class FormTests(TestCase):
 
 class TestDetailsForm(TestCase):
     def test_details_form(self):
-        form =  YourDetailsForm({'height': '', 'weight': '',
-                          'age': '', 'level':''})
+        form =  YourDetailsForm({'height': '', 'weight': '', 'age': '', 'level':''})
         self.assertFalse(form.is_valid())
-        
-    
-    
-    

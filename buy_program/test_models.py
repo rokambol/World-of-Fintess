@@ -11,4 +11,3 @@ class TestDetailsModels(TestCase):
         self.assertEqual(details.height, "187")
         self.assertEqual(details.weight, "100")
         self.assertEqual(details.age, '33')
-      

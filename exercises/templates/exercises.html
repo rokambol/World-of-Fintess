@@ -10,7 +10,7 @@
                 <h3>{{ exercise.name }}</h3>
                 <p class="exercise-description">{{ exercise.description }}</p>
 
-                <form method="post" action="{% url 'single_exercise' exercise.id %}">
+                <form class="form" method="post" action="{% url 'single_exercise' exercise.id %}">
                     {% csrf_token %}
                         <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">View more ...</button>
