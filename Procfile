@@ -1,0 +1,1 @@
+web: gunicorn World of Fitness.wsgi:application

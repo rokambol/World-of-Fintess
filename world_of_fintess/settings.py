@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'exercises',
     'fitness_programs',
     'buy_program',
-    'storages'
+    'storages',
     
 ]
 
@@ -144,7 +144,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000'
 }
-
+AWS_DEFAULT_ACL = None
 AWS_STORAGE_BUCKET_NAME = 'dim-fitnessworld'
 AWS_S3_REGION_NAME = 'eu-west-1'
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
