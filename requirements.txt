@@ -14,7 +14,7 @@ configobj==5.0.6
 configparser==3.8.1
 constantly==15.1.0
 crayons==0.2.0
-cryptography==2.1.4
+cryptography==2.3
 gunicorn==19.9.0
 dj-database-url==0.5.0
 Django==1.11
