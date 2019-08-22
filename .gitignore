@@ -6,3 +6,4 @@ env.py
 *.jpg
 media/
 static/
+/env.py
