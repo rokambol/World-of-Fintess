@@ -5,7 +5,7 @@
 <div id="fullexercise" class="container-fluid mx-auto" data-exercise="{{ exercise|safe }}">
     <h1 class="mx-auto display-1 col-md-auto text-white bg-none">{{ exercise.name }}</h1>
     <img class="img-fluid" src="{{ MEDIA_URL }}{{ exercise.image }}" alt="Exercise picture">
-    <p class="text-justify">{{ exercise.description }}</p>
+    <p class="text-white text-justify">{{ exercise.description }}</p>
 </div>
 
 {% endblock %}
