@@ -1,26 +1,33 @@
 body {
     font-family: Arial;
-    color: #f5f5f5;
+    color: #181818;
     font-size: 12px;
     padding-top: 100px;
+    max-width: 100%;
     background-image:url("https://cdn.pixabay.com/photo/2017/01/09/11/30/dumbbell-1966247__340.jpg");
     background-color: black;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 
-footer {
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     margin-top: 40px;
     padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #ededed;
     color: #A9A9A9;
 }
 
 .icon-bar {
     color: transparent;
     background-color: transparent;
+}
+
+.focus {
+    color:#f5f5f5;
+    
 }
 
 .accountform {
@@ -57,6 +64,8 @@ caption p {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .panel-default {
@@ -103,7 +112,9 @@ caption p {
     color: #f5f5f5;
 }
 
-
+table {
+    background-color: #1d9ce5;
+}
 .text-justify{
     margin-top: 40px;
     text-align: center;
@@ -111,9 +122,29 @@ caption p {
     font-weight: 200;
     
 }
+#button {
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+    
+}
+
+#button:hover {
+  text-decoration: none;
+  text-size: 24px;
+  
+}
 
 .img-fluid{
     width: 100%;
     
 }
 
+.text-center{
+    color:#f5f5f5;
+    margin-top: 40px;
+}
+
+.footer p{
+    color:#f5f5f5;
+}

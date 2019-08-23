@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+<h1>Exercise catalogue</h1>
 <div class="row row-flex">
     {% for exercise in exercises %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
@@ -18,8 +21,17 @@
                 </form>
             </div>
         </div>
-    {% endfor %}
-</div>
+    
+        {% endfor %}
+        {%  else %}
+        <div class="container-fluid">
+            <header><h1>Welcome and thank you to choose our app to guide in wonderfull World of Fitness</h1></header>
+              <h3 class="text-center">World of fitness could be confussing, and so inspiring in the same time. Over 80% of the population in the world do some fitness activity everyday, that amazing isn't it? The best result in fitness world are achieved through special advivce or tailor made fitness program because every dody is different and tolerate different level of stres so here our app come handy we offer you acess to free catalogue with most effective exercises you can practise in the gym or home or our team could make your special 12-weeks fitness program to follow with guarantee result or your money back. </h3>
+            <a href="{% url 'register' %}"><button type="button" id="button" class="btn btn-primary btn-lg btn-block mt-40">To start your journey just press here to register</button></a> 
+        </div>
+        {% endif %}
+    
+
 
 
 {% endblock %}
