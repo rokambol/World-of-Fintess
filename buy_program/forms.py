@@ -1,6 +1,5 @@
 from django import forms
-from .models import Details, fitness_level
-
+from buy_program.models import Details
 
 
 class MakePaymentForm(forms.Form):
@@ -16,7 +15,19 @@ class MakePaymentForm(forms.Form):
     
     
     
-class YourDetailsForm(forms.Form):
+class YourDetailsForm(forms.ModelForm):
+    
+    
+    begginer = 'Begginer'
+    medium = 'Medium'
+    advance = 'Advance'
+
+    fitness_level = (
+      (begginer, 'Begginer'),
+      (medium, 'Medium'),
+      (advance, 'Advance'),
+        
+    )
     
     height = forms.IntegerField(label='your height in centimetres', required=True)
     weight = forms.IntegerField(label='your weight in kilos', required=True)
@@ -24,5 +35,6 @@ class YourDetailsForm(forms.Form):
     level = forms.ChoiceField(choices=fitness_level)
     
 
-    
-    
+    class Meta:
+        model = Details
+        fields = ('height', 'weight', 'age', 'level',)

@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from .forms import UserLoginForm, UserRegistrationForm
+from .models import FitnessUser
+from fitness_programs.models import fitness_programs
+from buy_program.models import Details
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 
@@ -46,9 +49,22 @@ def login(request):
 
 
 @login_required
-def profile(request):
+def profile(request): 
     """A view that displays the profile page of a logged in user"""
-    return render(request, 'profile.html')
+    user = FitnessUser.objects.filters()
+    height = Details.objects.filter(height = 'height')
+    weight = Details.objects.filter(weight = 'weight')
+    age =  Details.objects.filter(age = 'age')
+    levels = Details.objects.filter(levels = 'levels')
+    
+    if detail.height == '' and detail.weight == '' and detail.age == '':
+        messages.error(request, "We do not have any of your details yet, please purchase fitness frogram so we can track how your body change")
+    else:
+        table1 = fitness_programs.objects.all()
+        detail = Details.objects.all()
+        
+   
+    return render(request, 'profile.html', {"table1":table1, "height": detail.height, "weight":detail.weight, "age": detail.age, "levels": detail.levels})
 
 
 def register(request):

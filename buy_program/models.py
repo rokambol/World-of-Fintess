@@ -1,24 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-begginer = 'Begginer'
-medium = 'Medium'
-advance = 'Advance'
 
-fitness_level = (
-      (begginer, 'Begginer'),
-      (medium, 'Medium'),
-      (advance, 'Advance'),
-        
-    )
 
 #Create your models here.
 class Details(models.Model):
     height = models.CharField(max_length=3, default='')
     weight = models.CharField(max_length=3, default='')
     age = models.CharField(max_length=3, default='')
-    levels = models.CharField(max_length=30, choices=fitness_level, default='')
-      
-      
-      
+    level = models.CharField(max_length=30, default='')
+    user = models.ForeignKey(User, default='')
+    
     def __str__(self):
         return '%s %s %s %s' % (self.height, self.weight, self.age, self.level) 

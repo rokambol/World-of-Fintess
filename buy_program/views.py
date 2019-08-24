@@ -24,10 +24,9 @@ def buy_program(request):
            weight = request.POST.get("weight")
            age = request.POST.get("age")
            level = request.POST.get("level")
-           request.session["height"] = height
-           request.session["weight"] = weight
-           request.session["age"] = age
-           request.session["level"] = level
+           detail = your_detailsform.save(commit=False)
+           detail.user = request.user
+           detail.save()
            
            return redirect('payment')
     else:

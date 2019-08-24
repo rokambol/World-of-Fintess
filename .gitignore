@@ -7,3 +7,6 @@ env.py
 media/
 static/
 /env.py
+.c9
+.__pycache__
+.git

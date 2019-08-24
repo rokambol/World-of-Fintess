@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 
 class FitnessUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,
-                                related_name='swimmer')
+                                related_name='User')
     
+        
     def __str__(self):
         return self.user.username

@@ -11,14 +11,6 @@ body {
     background-repeat: repeat;
 }
 
-.footer {
-    position: static;
-    bottom: 0;
-    width: 100%;
-    margin-top: 40px;
-    padding-top: 20px;
-    color: #A9A9A9;
-}
 
 .icon-bar {
     color: transparent;
@@ -141,7 +133,6 @@ table {
 
 #button:hover {
   text-decoration: none;
-  text-size: 24px;
   
 }
 
@@ -153,8 +144,4 @@ table {
 .text-center{
     color:#f5f5f5;
     margin-top: 40px;
-}
-
-.footer p{
-    color:#f5f5f5;
 }
