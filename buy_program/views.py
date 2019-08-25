@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .models import Details
 from .forms import MakePaymentForm, YourDetailsForm
 from django.conf import settings
 from django.utils import timezone
@@ -20,10 +21,6 @@ def buy_program(request):
        #request.session.clear() # empty session dict every time function is call
        your_detailsform = YourDetailsForm(request.POST)
        if your_detailsform.is_valid():
-           height= request.POST.get("height")
-           weight = request.POST.get("weight")
-           age = request.POST.get("age")
-           level = request.POST.get("level")
            detail = your_detailsform.save(commit=False)
            detail.user = request.user
            detail.save()
@@ -35,10 +32,11 @@ def buy_program(request):
     
 
 def payment(request):
-    height = int(request.session["height"])
-    weight = int(request.session["weight"])
-    age = int(request.session["age"])
-    level = str(request.session["level"])
+    height = Details.objects.values()
+    weight = Details.objects.values()
+    age =  Details.objects.values()
+    level = Details.objects.values()
+    print(height)
     if weight >= 99 and height < 180:
         table1 = fitness_programs.objects.all().filter(name="Begginer 2")
     else:

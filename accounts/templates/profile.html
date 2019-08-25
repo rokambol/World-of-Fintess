@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    
     <p class="text-justify">You are logged in as {{ user.email }} </p>
-    
   
+    
+      
         <p class="text-justify">Your height is {{ height }} Centimeters</p>
         <p class="text-justify">Your weight is {{ weight }} Kilograms</p>
         <p class="text-justify">You are  {{ age }} years old</p>
-        <p class="text-justify">You current fitness level is: {{ levels }}</p>
-        
+        <p class="text-justify">You current fitness level is: {{ level }}</p>
+     
+     
    <h1 class="text-justify"> Your purchase firness program is:</h1>
+   
    
    {% for item in table1 %}
 
@@ -162,8 +164,10 @@
     
   </tbody>
 </table>
- {% endfor %}
-    
-    
+   {% endfor %}
+
+
+<h1 class="text-justify">We do not have any of your details yet, please purchase fitness frogram so we can track how your body change</h1>
+
     
 {% endblock %}
