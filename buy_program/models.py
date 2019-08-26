@@ -9,7 +9,7 @@ class Details(models.Model):
     weight = models.CharField(max_length=3, default='')
     age = models.CharField(max_length=3, default='')
     level = models.CharField(max_length=30, default='')
-    user = models.ForeignKey(User, default='')
+    user = models.ForeignKey(User)
     
     def __str__(self):
         return '%s %s %s %s' % (self.height, self.weight, self.age, self.level) 
