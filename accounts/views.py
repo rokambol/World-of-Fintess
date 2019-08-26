@@ -58,10 +58,6 @@ def profile(request):
     age = int(h['age'])
     level = str(h['level'])
     
-    
-    
-    
-    
     if weight == height == age:
         messages.error(request, "You have input unrealistic details")
     elif weight >200 or age > 100 or height > 220:
