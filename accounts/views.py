@@ -51,13 +51,23 @@ def login(request):
 @login_required
 def profile(request): 
     """A view that displays the profile page of a logged in user"""
-    allSet = Details.objects.values()
-    h = Details.objects.values('height', 'weight', 'age', 'level')[0]
-    height = int(h['height'])
-    weight = int(h['weight'])
-    age = int(h['age'])
-    level = str(h['level'])
     
+    current_user = request.user
+    pk = int(current_user.id)
+    us = Details.objects.get(user__exact=pk)
+    
+
+ 
+     #values('height', 'weight', 'age', 'level', 'user').
+      
+    #h = Details.objects.filters(user__exact=pk)
+    #user = int(us['user'])
+    
+    height = int(us.height)
+    weight = int(us.weight)
+    age = int(us.age)
+    level = str(us.level)
+
     if weight == height == age:
         messages.error(request, "You have input unrealistic details")
     elif weight >200 or age > 100 or height > 220:
@@ -76,10 +86,11 @@ def profile(request):
         table1 = fitness_programs.objects.all().filter(name="Advance 2")
     elif weight < 70 and height >= 170 and age<20 and level == 'Medium':
         table1 = fitness_programs.objects.all().filter(name="Advance 1")
-        
-    print(allSet, height, weight, age, level)
+
+    print(height, weight, age)
+    
    
-    return render(request, 'profile.html', {"table1":table1, "height":height, "weight":weight, "age": age, "level": level})
+    return render(request, 'profile.html', {"table1":table1, "height":height, "weight":weight, "age": age, "level": level, "pk":pk})
 
 
 def register(request):

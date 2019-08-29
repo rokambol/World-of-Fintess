@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <p class="text-justify">You are logged in as {{ user.email }} </p>
-  
-    
+
+    <p class="text-justify">You are logged in as {{ user.id }}{{ user.email }}</p>
+       {% if user.id == pk %}
       
         <p class="text-justify">Your height is {{ height }} Centimeters</p>
         <p class="text-justify">Your weight is {{ weight }} Kilograms</p>
@@ -165,9 +165,10 @@
   </tbody>
 </table>
    {% endfor %}
-
-
-<h1 class="text-justify">We do not have any of your details yet, please purchase fitness frogram so we can track how your body change</h1>
-
-    
+{% else %}
+   {% for message in messages %}
+<h1 class="text-justify">{{ message }}</h1>
+    {% endfor %}
+ {% endif %}
+  
 {% endblock %}
