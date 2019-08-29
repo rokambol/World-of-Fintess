@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/rokambol/World-of-Fintess.svg?branch=master)](https://travis-ci.com/rokambol/World-of-Fintess)
+
 # World of Fitness
 
 Application allow user to discover world of fitness main type of exercise he can practice in the gym or home, each exercise show to the user with comprehensive explanation and good quality picture how to practice exercise safely to maximum efficiency.The main business model of the app is very simple - user can browse exercise catalogue for free but if they really want to best result they can purchase fitness program, tailor made for them base only on user physical data and current fitness level. 
