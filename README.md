@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/rokambol/World-of-Fintess.svg?branch=master)](https://travis-ci.com/rokambol/World-of-Fintess)
-
 # World of Fitness
 
 Application allow user to discover world of fitness main type of exercise he can practice in the gym or home, each exercise show to the user with comprehensive explanation and good quality picture how to practice exercise safely to maximum efficiency.The main business model of the app is very simple - user can browse exercise catalogue for free but if they really want to best result they can purchase fitness program, tailor made for them base only on user physical data and current fitness level. 
@@ -62,6 +60,8 @@ Other technologies used in this project are:
 
 - [Bootstrap](https://getbootstrap.com/), a front-end framework for general responsiveness. For components used such as the navbar with burger icon which makes the app easy to use on mobile.
 
+- [Postgres](https://www.postgresql.org/) for database storage and query writing.
+
 - [Stripe](https://stripe.com/docs/stripe-js) to process customer payment without app store customer card details.
 
 - [Travis CI](https://travis-ci.com/) was used for continuous integration for build and test software project.
@@ -96,8 +96,7 @@ For the user stories, the manual testing process is as follows:
 
 - User can reset choose password at any time by clicking reset password under login page any field in reset password should not be left empty or django message will appear say user error type and show which field must be fill.
 
-- In the top left corner application contain search bar powered by [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) where user able to choose place which should appear on the map. 
-
+- In the top left corner application contain search bar where user can type name of couple letters of exercise and exercises with relate name should appear on the screen.
   
 
 ## Deployment and Security
@@ -109,10 +108,14 @@ the local editor for whole project [AWS Cloud9](https://aws.amazon.com/console/)
 All secret keys is store in temporary file in editor for development stage of the project which is include in .gitignore and that way is prevent to be publish in public accessible places, for production stage all secret keys are clone directly to [Heroku](https://www.heroku.com/)
 
 Deployment:
+Production version of the project is deployed to [Heroku](https://fitness-world.herokuapp.com/)
 
 GIT Repository [here](https://github.com/rokambol/World-of-Fintess) clone repository and run it to to your own editor. 
 
 1. in your own editor in bash terminal/ pip/script terminal use following command:
+sudo pip3 install django 1.11 (correct version for this project).
+
+and then:
 
 sudo pip3 install requirements.txt
 

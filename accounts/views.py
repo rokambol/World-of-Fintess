@@ -48,33 +48,8 @@ def login(request):
     return render(request, 'login.html', args)
 
 
-@login_required
-def profile(request): 
-    """A view that displays the profile page of a logged in user"""
-    
-    current_user = request.user
-    pk = int(current_user.id)
-    us = Details.objects.get(user__exact=pk)
-    
-
- 
-     #values('height', 'weight', 'age', 'level', 'user').
-      
-    #h = Details.objects.filters(user__exact=pk)
-    #user = int(us['user'])
-    
-    height = int(us.height)
-    weight = int(us.weight)
-    age = int(us.age)
-    level = str(us.level)
-
-    if weight == height == age:
-        messages.error(request, "You have input unrealistic details")
-    elif weight >200 or age > 100 or height > 220:
-         messages.error(request, "You have input unrealistic details")
-    elif weight < 45 or age < 16 or height < 135:
-         messages.error(request, "You have input negative value or you body details are not suitible for fitness exercise yet!!!")
-    elif weight >= 70 and height < 170 and age>=20 and level == 'Begginer':
+def get_program(weight, height, age, level):  #funcion determinate which fitness program user purchase
+    if weight >= 70 and height < 170 and age>=20 and level == 'Begginer':
         table1 = fitness_programs.objects.all().filter(name="Begginer 2")
     elif weight < 70 and height >= 170 and age<20 and level == 'Begginer':
         table1 = fitness_programs.objects.all().filter(name="Begginer 1")
@@ -86,11 +61,28 @@ def profile(request):
         table1 = fitness_programs.objects.all().filter(name="Advance 2")
     elif weight < 70 and height >= 170 and age<20 and level == 'Medium':
         table1 = fitness_programs.objects.all().filter(name="Advance 1")
+    return table1
 
-    print(height, weight, age)
+@login_required
+def profile(request): 
+    """A view that displays the profile page of a logged in user"""
+    current_user = request.user
+    pk = int(current_user.id)
+    try:
+        us = Details.objects.get(user__exact=pk)
+    except Details.DoesNotExist:
+        us = None
     
-   
-    return render(request, 'profile.html', {"table1":table1, "height":height, "weight":weight, "age": age, "level": level, "pk":pk})
+    if us is not None:
+        height = int(us.height)
+        weight = int(us.weight)
+        age = int(us.age)
+        level = str(us.level)
+        table1 = get_program(weight, height, age, level)
+    else:
+        messages.info(request, "You did'n purchase any program yet!")
+    return render(request, 'profile.html', {"table1":table1, "height":height, "weight":weight, "age": age, "level": level})
+
 
 
 def register(request):

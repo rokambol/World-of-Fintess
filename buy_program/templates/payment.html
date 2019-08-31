@@ -16,9 +16,10 @@
 {% block content %}
 
 {% for item in table1 %}
-<p>your fitness programme price is:{{ item.price }} GBP ,please pay it in the form below </p>
+    <p class="text-justify">your fitness programme price is:{{ item.price }} GBP ,please pay it in the form below: </p>
 {% endfor %}
 
+<!-- payment form -->
 <form role="form" method="post" id="payment-form" action="{% url 'payment' %}">
     <legend>Payment Details</legend>
 

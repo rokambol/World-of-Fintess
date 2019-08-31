@@ -30,42 +30,28 @@
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
                         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        <li>
+                            <a href="{% url 'buy_program' %}">
+                                <i class="fas fa-dumbbell"></i>Buy training program
+                                
+                                <label class="badge badge-warning"></label>
+                                
+                            </a>
+                        </li>
                     {%  else %}
                         <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
                         <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
                     {% endif %}
-                    <li>
-                        <a href="{% url 'buy_program' %}">
-                            <i class="fas fa-dumbbell"></i>Buy training program
-                            
-                            <label class="badge badge-warning"></label>
-                            
-                        </a>
-                    </li>
+                    
                 </ul>
             </div>
-        </div>
+        
     </nav>
-    {% if messages %}
-        <div class="alert alert-success">
-            <div class="messages">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            </div>
-        </div>
-    
-    <div class="container">
-        <div class="display">
-            <form class="search" action="{% url 'search' %}" method="GET">
-                <input type="text" name="q">
-                <button class="btn btn-primary pr-20" type="search">Search</button>
-            </form>
-        </div>
-        {% endif %}
-        {% block content %} {% endblock %}
+   
+
+    {% block content %} {% endblock %}
     </div>
-    
+   
 {% block head_js %}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
