@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <div class="container">
     <div class="display">
         <form class="search" action="{% url 'search' %}" method="GET"><!-- search block -->
@@ -10,7 +10,7 @@
         </form>
     </div>
 </div>
-{% if user.is_authenticated %}
+
 <h1>Exercise catalogue</h1>
 <div class="row row-flex">
     {% for exercise in exercises %}
@@ -34,7 +34,9 @@
     {%  else %}
     <div class="container-fluid">
         <header><h1>Welcome and thank you to choose our app to guide in wonderfull World of Fitness</h1></header>
-          <h3 class="text-center">World of fitness could be confussing, and so inspiring in the same time. Over 80% of the population in the world do some fitness activity everyday, that amazing isn't it? The best result in fitness world are achieved through special advivce or tailor made fitness program because every dody is different and tolerate different level of stres so here our app come handy we offer you acess to free catalogue with most effective exercises you can practise in the gym or home or our team could make your special 12-weeks fitness program to follow with guarantee result or your money back. </h3>
+          <h3 class="text-center">World of fitness could be confussing, and so inspiring in the same time. The real meaning of the health and fitness involves the efficient and proper working of all the body systems such as heart, nervous system, kidney, liver, digestive system, brain, etc. A person with healthy functioning body organs is called as a healthy and fit person. Being healthy and fit is not so easy in such a crowded and polluted environment. It is a big challenge to the whole human fraternity to maintain fitness together with the technological improvement in the modern world. Whenever the topic of health and fitness is discussed, many more questions arising in our mind that how to be healthy and fit, what habits we should follow to be healthy and fit, etc.
+Human body has lots of independently working organs however interdependent as well. If any of the organ suffer problem, it affects other organs too and arise complications. The functioning of any singular bodies coordinates the functions of all together. Human body has many important organs however internal which we cannot see from outside. So, it arises a big question that how we can keep our internal organs safe and proper working in order to maintain our health and fitness. Following proper and timely daily routine with necessary physical exercises and healthy food on daily basis is the way to maintain health and fitness. Healthy food provides our body all the required and essential nutrients, vitamins, proteins, minerals, healthy fat and carbohydrate. Regular exercises tones up our body muscles, keeps skin fresh, keeps spine straight and fit, regularize digestive system functioning, improves blood circulation to whole body, keeps body and mind in balance, etc.
+Exercise promotes heart functioning and gives it strength to pump more blood at faster rate all through the body. Thus, we can say that exercise and proper nutrition regularly help a person to keep all his organs in absolute fitness. Exercise and healthy foods are the way to keep body and mind healthy as well as avoid health hazards and medication. Both are necessary for the people of all ages. The best result in fitness world are achieved through special advivce or tailor made fitness program because every dody is different and tolerate different level of stres so here our app come handy we offer you acess to free catalogue with most effective exercises you can practise in the gym or home or our team could make your special 12-weeks fitness program to follow with guarantee result or your money back. </h3>
         <a href="{% url 'register' %}"><button type="button" id="button" class="btn btn-primary btn-lg btn-block mt-40">To start your journey just press here to register</button></a> 
     </div>
     {% endif %}
